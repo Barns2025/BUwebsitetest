@@ -457,7 +457,7 @@ header.main-header .main-nav .nav-list a.current {
 /* —— Animation prep —— */
 .color-swatch {
   opacity: 0;
-  transition: transform 2s ease-out, opacity 2s ease-out;
+  transition: transform 1s ease-out, opacity 1s ease-out;
 }
 
 /* —— Initial offsets —— */
