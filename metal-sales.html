@@ -199,5 +199,23 @@
 
   <!-- Site Script -->
   <script src="metal-sales.js"></script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  // 1) Create the observer (same settings you use on other pages)
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      entry.target.classList.toggle("in-view", entry.isIntersecting);
+    });
+  }, { threshold: 0.2 });
+
+  // 2) Hook it up to every .animate-on-scroll element
+  document.querySelectorAll(".animate-on-scroll")
+          .forEach(el => observer.observe(el));
+
+  // 3) Force an initial check so items already in view reveal immediately
+  window.dispatchEvent(new Event("scroll"));
+});
+</script>
+
 </body>
 </html>
