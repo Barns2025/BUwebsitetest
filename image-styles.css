@@ -1,0 +1,103 @@
+/*BU logo CSS*/
+/* Rectangular emblem logo */
+.logo {
+  display: inline-block;               /* shrink-wrap around the image */
+  padding: 4px 4px;                   /* horizontal & vertical padding */
+  background-color: #001f3f;           /* deep navy surround */
+  border-radius: 16px;                 /* subtle corner rounding */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* soft drop-shadow */
+}
+
+.logo img {
+  display: block;                      /* remove inline-image whitespace */
+  width: 150px;                        /* match your HTML width */
+  height: auto;                        /* preserve aspect ratio */
+  border-radius: 8px;                  /* slightly round the image corners */
+  object-fit: cover;                   /* ensure it fills its box cleanly */
+
+  }
+
+@media not all{
+/* Emblem‐style logo */
+.logo {
+  display: inline-block;        /* shrink‐wrap around the image */
+  padding: 4px;                 /* space between image and border */
+  background-color: #001f3f;    /* deep navy surround */
+  border-radius: 30%;           /* make the container circular */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4); /* soft drop‐shadow */
+}
+
+.logo img {
+  display: block;               /* remove inline‐image whitespace */
+  width: 200px;                 /* match your HTML width/height */
+  height: 80px;                 /* or auto if you want to keep aspect */
+  border-radius: 30%;           /* make the image itself circular */
+  object-fit: cover;            /* ensures it fills the container */
+ }
+}
+
+
+
+
+/*Vintage Barn image */
+.vintage-barn {
+  max-width: 900px;        /* control your image’s container width */
+  margin: 40px auto;       /* center it with some vertical breathing room */
+}
+
+.vintage-barn img {
+  width: 100%;             /* fill the container */
+  height: auto;            /* keep its aspect ratio */
+  display: block;          /* remove any inline whitespace */
+  border: 4px solid #001f3f;      /* deep‐navy frame to match your theme */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* soft drop‐shadow for lift */
+  border-radius: 8px;      /* gentle corner rounding */
+}
+
+
+/*DIY-Packages image*/
+.diy-package {
+  max-width: 900px;              /* match your other image containers */
+  margin: 40px auto;             /* center with vertical spacing */
+}
+
+.diy-package img {
+  width: 100%;                   /* fill the container */
+  height: auto;                  /* preserve aspect ratio */
+  display: block;                /* kill any inline whitespace */
+  border: 4px solid #001f3f;     /* deep-navy frame */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle drop-shadow */
+  border-radius: 8px;            /* gentle rounded corners */
+}
+
+
+
+
+
+/*steel-truss-hybrid image*/
+/* at the top of image-styles.css, define a variable for easy tweaking */
+/* Emblem wrapper: fixed aspect ratio + frame */
+.steel-truss {
+  max-width: 900px;              /* keep it from growing too wide */
+  margin: 40px auto;             /* center it with vertical space */
+  height: auto;                  /* match .diy-package’s automatic block height */
+}
+
+.steel-truss img {
+  width: 100%;                   /* fill its container */
+  height: auto;                  /* preserve aspect ratio */
+  display: block;                /* remove inline spacing */
+  border: 4px solid #001f3f;     /* deep-navy frame */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3); /* subtle lift */
+  border-radius: 8px;            /* soft corner rounding */
+}
+
+
+/*Pole Barns image*/
+.services-grid .service-item img {
+  width: 100%;            /* span full card width */
+  height: 140px;          /* fixed height for uniform cards */
+  object-fit: cover;      /* center & crop as needed */
+  display: block;         /* no inline gaps */
+  border-radius: 4px;     /* optional rounding */
+}

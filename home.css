@@ -1,0 +1,795 @@
+:root {
+  /* 1) Pick your base color in HSL */
+  --primary-h: 230deg;    /* hue: 210° is a classic navy-blue */
+  --primary-s: 80%;       /* saturation */
+  --primary-l: 45%;       /* lightness */
+
+  /* 2) This is your “hue shift” — start at 0deg (no change) */
+  --hue-shift: 0deg;
+
+  /* 3) Compute the actual color by adding the shift to the base hue */
+  --primary-color: hsl(
+    calc(var(--primary-h) + var(--hue-shift)),
+    var(--primary-s),
+    var(--primary-l)
+  );
+}
+
+
+/* Base styles and font settings */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5em;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  list-style: none;
+}
+
+/* Top bar */
+.top-bar {
+  background: #333;
+  color: #f0f0f0;
+  font-size: 0.9em;
+}
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 5px 15px;
+}
+.top-bar .contact-info span {
+  margin-right: 20px;
+}
+.top-bar .contact-info a {
+  color: #f0f0f0;
+}
+.appointment-btn {
+  background: var(--primary-color);
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.appointment-btn:hover {
+  background: var(--primary-color);
+}
+.social-links a {
+  color: #f0f0f0;
+  margin-left: 15px;
+  font-size: 0.9em;
+}
+
+/* Header / Nav */
+.main-header {
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 15px;
+}
+.logo img {
+  height: 50px;
+}
+.main-nav {
+  position: relative;
+}
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+.nav-list li {
+  display: inline-block;
+}
+.nav-list a {
+  font-weight: 600;
+  color: #333;
+  padding: 8px 4px;
+}
+.nav-list a.current {
+  color: var(--primary-color);
+}
+.menu-toggle {
+  display: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-overlay {
+  background: rgba(0,0,0,0.5);
+  padding: 20px;
+}
+.hero h1 {
+  font-size: 2em;
+  margin-bottom: 0.3em;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+.hero .subtitle {
+  font-size: 1.2em;
+  margin-bottom: 1em;
+}
+.primary-btn {
+  display: inline-block;
+  background: var(--primary-color);
+  color: #fff;
+  padding: 12px 20px;
+  font-weight: 700;
+  border-radius: 3px;
+}
+.primary-btn:hover {
+  background:var(--primary-color);
+}
+
+/* Intro section */
+.intro-section {
+  padding: 40px 20px;
+  text-align: center;
+}
+.intro-section h2 {
+  font-size: 1.8em;
+  margin-bottom: 0.5em;
+}
+.intro-section p {
+  max-width: 800px;
+  margin: auto;
+  font-size: 1.1em;
+}
+
+/* Services summary grid */
+.services-summary {
+  background: #f9f9f9;
+  padding: 40px 20px;
+}
+.services-summary h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+}
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 1100px;
+  margin: auto;
+  gap: 20px;
+}
+.service-item {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  text-align: center;
+  width: 240px;
+  padding: 15px;
+}
+.service-item img {
+  max-width: 100%;
+  height: 140px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+}
+.service-item h3 {
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+.service-item p {
+  font-size: 0.95em;
+  margin-bottom: 0.75em;
+}
+.service-item .read-more {
+  font-weight: 600;
+  font-size: 0.95em;
+  color: var(--primary-color);
+}
+
+/* Call-to-action Section */
+.cta-section {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+  text-align: center;
+}
+.cta-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+.cta-section p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+.cta-section .chat-btn {
+  display: inline-block;
+  background: var(--primary-color)
+;
+  color: #fff;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+.cta-section .chat-btn:hover {
+  background:var(--primary-color)
+;
+}
+.newsletter {
+  max-width: 500px;
+  margin: 0 auto 20px auto;
+}
+.newsletter p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+.subscribe-form, .subscribe-form-footer {
+  display: flex;
+  justify-content: center;
+}
+.subscribe-form input,
+.subscribe-form-footer input {
+  padding: 8px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 3px 0 0 3px;
+}
+.subscribe-form button,
+.subscribe-form-footer button {
+  padding: 8px 12px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  background: var(--primary-color)
+;
+  color: #fff;
+  cursor: pointer;
+}
+.subscribe-form button:hover,
+.subscribe-form-footer button:hover {
+  background:var(--primary-color)
+;
+}
+.cta-contact {
+  margin-top: 20px;
+  font-size: 0.95em;
+}
+.cta-phone {
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+.cta-phone .hours {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: #ddd;
+}
+.cta-social a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.1em;
+}
+
+
+
+/* Mobile menu - hidden by default */
+.mobile-menu {
+  display: none;
+  background: #fff;
+  border-top: 2px solid #eee;
+}
+.mobile-menu ul {
+  padding: 10px 15px;
+}
+.mobile-menu li {
+  margin: 10px 0;
+}
+.mobile-menu li a {
+  color: #333;
+}
+
+/* Mobile Responsive Styles */
+@media (max-width: 1100px) {
+  .top-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .appointment-btn,
+  .social-links {
+    margin-top: 5px;
+  }
+  .main-header {
+    flex-wrap: wrap;
+  }
+  .nav-list {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+    padding: 8px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .services-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+@media (max-width: 1100px) {
+  /* Center the dropdown menu items (not the menu-toggle button) */
+  .mobile-menu ul {
+    display: flex;               /* switch to flex so we can align */
+    flex-direction: column;      /* stack vertically */
+    align-items: center;         /* center each <li> horizontally */
+    padding: 10px 0;             /* adjust top/bottom padding if desired */
+  }
+
+  .mobile-menu li {
+    width: auto;                 /* let items size to content */
+    margin: 8px 0;               /* you already have 10px; tweak as needed */
+  }
+
+  .mobile-menu li a {
+    display: block;              /* ensure full clickable area */
+    text-align: center;          /* center the link text */
+    width: 100%;                 /* optional: make the block fill the menu width */
+  }
+}
+
+/* —— Nav reset & font unify —— */
+
+/* Remove bullets and reset spacing on both desktop & mobile nav lists */
+header.main-header .main-nav .nav-list,
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make desktop nav items display inline and space them out */
+header.main-header .main-nav .nav-list li {
+  display: inline-block;
+  margin-right: 20px; /* adjust as needed */
+}
+
+/* Unify link styles in both navs */
+header.main-header .main-nav .nav-list a,
+.mobile-menu a {
+  font-family: 'Open Sans', sans-serif;  /* same as body */
+  font-size: 1rem;                       /* match your desktop size */
+  font-weight: 600;                      /* same weight as desktop */
+  color: #333;                           /* your standard link color */
+  text-decoration: none;
+}
+
+/* Hover/focus states */
+header.main-header .main-nav .nav-list a:hover,
+.mobile-menu a:hover,
+.mobile-menu a.current {
+  color: var(--primary-color)
+; /* or whatever your hover color is */
+}
+/*—— Highlight “current” nav item on desktop ——*/
+header.main-header .main-nav .nav-list a.current {
+  color: var(--primary-color)
+;                /* your accent color */
+  border-bottom: 2px solid var(--primary-color)
+;
+  padding-bottom: 4px;           /* make room for the underline */
+}
+
+/*—— Highlight “current” nav item in mobile dropdown ——*/
+.mobile-menu a.current {
+  color: var(--primary-color)
+;                /* same accent color */
+  background: #f9f9f9;           /* light grey highlight */
+}
+
+/* 1) Allow wrapping & add a tiny vertical gap */
+.top-bar-content {
+  display: flex;        /* you already have this */
+  flex-wrap: wrap;      /* allow items to break onto new rows */
+  row-gap: 0.4rem;      /* small gap between each “row” */
+}
+
+/* 2) Stack your email & phone inside .contact-info */
+.top-bar .contact-info span {
+  display: block;       /* each span on its own line */
+}
+
+/* 3) Force the appointment button onto its own row */
+.top-bar .appointment-btn {
+  flex: 1 1 100%;       /* full-width item in the flex container */
+  text-align: center;   /* optional: center its text */
+  margin: 0.4rem 0;     /* vertical breathing room */
+}
+
+/* 4) Let social links share the first row if there’s room */
+.top-bar .social-links {
+  flex: 1 1 auto;       /* default behavior, will sit beside .contact-info */
+  text-align: right;    /* keep them aligned right */
+}
+
+
+
+/* === 1. Local Font Face Definitions: Open Sans & Open Sans Condensed === */
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Open Sans Regular'), local('OpenSans-Regular'),
+       url('fonts/OpenSans-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Open Sans Italic'), local('OpenSans-Italic'),
+       url('fonts/OpenSans-Italic.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 600;
+  src: local('Open Sans SemiBold'), local('OpenSans-SemiBold'),
+       url('fonts/OpenSans-SemiBold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Bold'), local('OpenSans-Bold'),
+       url('fonts/OpenSans-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Bold Italic'), local('OpenSans-BoldItalic'),
+       url('fonts/OpenSans-BoldItalic.woff') format('woff');
+}
+/* Open Sans Condensed (for headings) */
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Open Sans Condensed Bold'), local('OpenSansCondensed-Bold'),
+       url('fonts/OpenSansCondensed-Bold.woff') format('woff');
+}
+@font-face {
+  font-family: 'Open Sans Condensed';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Open Sans Condensed Bold Italic'), local('OpenSansCondensed-BoldItalic'),
+       url('fonts/OpenSansCondensed-BoldItalic.woff') format('woff');
+}
+
+/* === 2. Base styles and updated font settings === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;  /* stays as Open Sans for body text */
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+/* Use Open Sans Condensed for all headings (replaces Montserrat) */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans Condensed', sans-serif;  /* replaced Montserrat */
+  margin-bottom: 0.5em;
+}
+
+
+
+/*Facebook central location*/
+/* Center the icon container */
+.social-links {
+  text-align: center;            /* center inline-block children */
+}
+
+/* Make the SVG itself a block and auto-margin it */
+.social-link svg {
+  display: block;
+  margin: 0 auto;                /* horizontally center the SVG */
+}
+/* Base footer-column layout (from home.css) */
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}                               /* :contentReference[oaicite:3]{index=3} */
+
+
+
+
+
+
+
+
+/* makes things hover when you hover over them haha 
+*:hover{transform:translateY(-2px);box-shadow:0 4px 8px rgba(0,0,0,0.2);transition:transform .2s ease,box-shadow .2s ease;}
+*:not([style*="border-radius"]) {
+  border-radius: 8px;
+}
+.top-bar *:hover{transform:translateY(-1px);box-shadow:0 4px 8px rgba(0,0,0,0.2);transition:transform .2s ease,box-shadow .2s ease;}
+*/
+
+
+/* makes things hover when you scroll-not needing a mouse lol*/
+/* default state */
+.box {
+  transform: translateY(0);
+  box-shadow: none;
+  transition: transform .2s ease, box-shadow .2s ease;
+  border-radius: 8px; /* you already had this globally */
+}
+
+/* “in-view” state: same as your :hover rules */
+.box.in-view {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+
+
+
+
+
+.social-links {
+  text-align: center;            /* center inline-block children */
+}
+
+/* Make the SVG itself a block and auto-margin it */
+.social-link svg {
+  display: block;
+  margin: 0 auto;                /* horizontally center the SVG */
+}
+
+
+.social-links {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.social-letter {
+  display: inline-flex;
+  align-items: left;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: #fff;
+  border-radius: 50%;
+  font-weight: bold;
+  color: #000;
+  text-decoration: black;
+  transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+
+
+
+/* Remove any bubble or background on the social links */
+.contact-col .social-links .social-letter {
+  background: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+  display: block;        /* one per line */
+  text-align: left;      /* align with your other contact text */
+}
+
+/* Disable any hover background or color-shift */
+.contact-col .social-links .social-letter:hover {
+  background: none !important;
+  color: #fff !important;  /* keep the text black on hover */
+  transform: none !important;
+  text-decoration: underline; /* if you want a subtle hover cue */
+}
+/* Make the social-links wrapper span the full width of its column */
+.contact-col .social-links {
+  width: 100%;
+}
+
+.contact-col .social-links,
+.contact-col .social-links .social-links {
+  width: 100%;
+}
+
+/* Stack scroll animation */
+.stack-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.stack-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+/* mobile menu button and dropdown*/
+
+/* ─── 1) Hamburger button base ─── */
+.menu-toggle {
+  background: none;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 24px;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001; /* sit above the nav */
+}
+
+.menu-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transform-origin: center;
+  /* bounce on rotation, smooth fade on opacity */
+  transition: 
+    transform 0.4s cubic-bezier(0.25, 0.1, 0.32, 1.0),
+    opacity   0.3s ease;
+}
+
+
+/* ─── 3) Morph to “X” when open ─── */
+.menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(10.5px) rotate(405deg);
+}
+.menu-toggle.open .bar:nth-child(2) {
+  transform: rotate(-270deg);
+  opacity: 0;
+}
+.menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-10.5px) rotate(-405deg);
+}
+
+/* ─── 4) Dropdown container hidden by default ─── */
+.mobile-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: #fff;
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.4s ease;
+  border-top: 2px solid #eee;
+  z-index: 1000;
+}
+
+/* ─── 5) When open, expand — adjust max-height to fit your links */ 
+.mobile-menu.open {
+  max-height: 500px; /* or use 100vh for full‐screen */
+}
+
+/* ─── 6) (Optional) Animate each link in ─── */
+.mobile-menu ul li {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.mobile-menu.open ul li {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 1100px) {
+  /* 1) Make .main-nav the positioning parent */
+  .main-nav {
+    position: relative !important;
+    z-index: 1000 !important;
+  }
+
+  /* 2) Keep the hamburger on top */
+  .menu-toggle {
+    position: relative !important;
+    z-index: 1001 !important;
+  }
+
+  /* 3) Hidden by default, directly below the toggle */
+  .mobile-menu {
+    position: absolute !important;
+    top: 100% !important;           /* right under the nav bar */
+    left: 0 !important;
+    width: 100% !important;
+    background: #fff !important;
+    border-top: 1px solid #ddd !important;
+    display: none !important;       /* hide until open */
+    overflow: visible !important;   /* show all items */
+  }
+
+  /* 4) Show everything at once when .open is toggled */
+  .mobile-menu.open {
+    display: block !important;      /* full height, no scroll */
+  }
+}
+
+
+
+@media (max-width: 1100px) {
+  /* 1) Remove any absolute/fixed positioning so it flows under the header */
+  .mobile-menu {
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    width: 100% !important;
+    display: none !important;    /* hidden until toggle */
+    border-top: 1px solid #eee !important;
+    background: #fff !important;
+    overflow: visible !important;
+  }
+
+  /* 2) When “open” is toggled, show it in‐flow below the header */
+  .mobile-menu.open {
+    display: block !important;
+  }
+
+  /* 3) (Optional) Make sure your header remains above it */
+  .main-header {
+    position: relative;
+    z-index: 10;
+  }
+  .menu-toggle {
+    position: relative;
+    z-index: 11;
+  }
+}
+/* Hide the hamburger menu on desktop-sized screens */
+/* Adjust the min-width value to match your desktop breakpoint */
+@media screen and (min-width: 1100px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}

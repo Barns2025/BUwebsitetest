@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us – Barns Unlimited</title>
+
+  <!-- Shared header/nav styles -->
+  <link rel="stylesheet" href="home.css" />
+
+  <!-- About page-specific styles -->
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="image-styles.css" />
+
+  <!-- Scroll animation styles -->
+  <link rel="stylesheet" href="animations.css" />
+  
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar stack-item">
+    <div class="top-bar-content stack-item">
+      <div class="contact-info stack-item">
+        <span>Email: <a href="mailto:sales@barnsunlimited.com">sales@barnsunlimited.com</a></span>
+        <span>Call us: <a href="tel:+14196572510">+419-657-2510</a></span>
+      </div>
+      <a href="#" class="appointment-btn stack-item">Book appointment</a>
+      <div class="social-links stack-item">
+        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="#" aria-label="Pinterest"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header with logo & navigation -->
+  <header class="main-header stack-item">
+    <div class="logo stack-item">
+      <a href="home.html">
+        <img src="images/BUlogo-1.png" alt="Barns Unlimited logo" width="100" height="80" />
+      </a>
+    </div>
+    <nav class="main-nav stack-item">
+      <ul class="nav-list stack-item">
+        <li><a href="home.html" class="stack-item">Home</a></li>
+        <li><a href="about.html" class="current stack-item">About</a></li>
+        <li><a href="services.html" class="stack-item">Services</a></li>
+        <li><a href="metal-sales.html" class="stack-item">Metal Sales</a></li>
+        <li><a href="gallery.html" class="stack-item">Gallery</a></li>
+        <li><a href="testimonials.html" class="stack-item">Testimonials</a></li>
+        <li><a href="careers.html" class="stack-item">Careers</a></li>
+        <li><a href="contact.html" class="stack-item">Contact</a></li>
+      </ul>
+      <!-- Hamburger / Menu Toggle -->
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Mobile Menu (Dropdown) -->
+  <nav class="mobile-menu stack-item">
+    <ul>
+      <li><a href="home.html" class="stack-item">Home</a></li>
+      <li><a href="about.html" class="current stack-item">About</a></li>
+      <li><a href="services.html" class="stack-item">Services</a></li>
+      <li><a href="metal-sales.html" class="stack-item">Metal Sales</a></li>
+      <li><a href="gallery.html" class="stack-item">Gallery</a></li>
+      <li><a href="testimonials.html" class="stack-item">Testimonials</a></li>
+      <li><a href="careers.html" class="stack-item">Careers</a></li>
+      <li><a href="contact.html" class="stack-item">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main class="about-content stack-item">
+    <section class="about-intro stack-item">
+      <h1 class="stack-item">About Barns Unlimited</h1>
+      <p class="stack-item"><strong>Barns Unlimited</strong> was founded with a passion for quality barn building and restoration. We are a family-owned company based in Lima, Ohio, and we pride ourselves on combining <em>old-fashioned craftsmanship</em> with modern building techniques. Our team has decades of experience in designing, constructing, and refurbishing barns of all kinds.</p>
+      <p class="stack-item">From humble beginnings, we have grown into a full-service barn construction and renovation firm. We specialize in pole barns, vintage barn restorations, and even steel-frame hybrid structures. No project is too large or too small – whether you need a simple storage barn or a sprawling equestrian facility, our experts will ensure the result exceeds your expectations.</p>
+    </section>
+
+    <section class="mission-values stack-item">
+      <h2 class="stack-item">Our Mission &amp; Values</h2>
+      <p class="stack-item"><strong>Commitment to Sustainability:</strong> We incorporate sustainable practices and materials in our projects whenever possible, ensuring environmental responsibility without compromising quality.</p>
+      <p class="stack-item"><strong>Historic Preservation:</strong> We respect historic barns and preserve their heritage while reinforcing them for continued use.</p>
+      <p class="stack-item"><strong>Quality Craftsmanship:</strong> Each barn is treated as our own, using quality materials and attention to detail.</p>
+      <p class="stack-item"><strong>Customer Satisfaction:</strong> Honest communication and going the extra mile from design to walkthrough.</p>
+    </section>
+
+    <section class="why-choose stack-item">
+      <h2 class="stack-item">Why Choose Barns Unlimited?</h2>
+      <ul class="stack-item">
+        <li><strong>Experience:</strong> Over 20 years in the industry.</li>
+        <li><strong>Full-Service:</strong> Design, site prep, construction, and finishing.</li>
+        <li><strong>Licensed &amp; Insured:</strong> Peace of mind throughout the build.</li>
+        <li><strong>Local &amp; Family-Owned:</strong> We treat you like a neighbor.</li>
+      </ul>
+      <p class="stack-item">When you choose Barns Unlimited, you’re partnering with a dedicated team to make your dream barn a reality.</p>
+    </section>
+  </main>
+
+  <!-- Footer Include (dynamic) -->
+  <div data-include="footer.html" class="stack-item"></div>
+  <script>
+    // Load shared footer content
+    document.querySelectorAll('[data-include]').forEach(el => {
+      fetch(el.getAttribute('data-include'))
+        .then(res => res.text())
+        .then(html => { el.outerHTML = html; })
+        .catch(err => console.error('Include failed:', err));
+    });
+  </script>
+
+  <!-- Site Script -->
+  <script src="home.js"></script>
+</body>
+</html>

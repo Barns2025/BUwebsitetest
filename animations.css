@@ -1,0 +1,77 @@
+/* Keyframes and classes for scroll animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Elements with this class will fade in upward when activated */
+.fade-in-up {
+  animation: fadeInUp .8s ease-out forwards;
+}
+
+/* (Optional) initial hidden state can be managed via JavaScript if needed */
+/* .hidden { opacity: 0; transform: translateY(20px); } */
+
+
+
+
+
+
+
+/* Stack scroll animation on scroll*/
+.stack-item {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.stack-item.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* 1) Define keyframes */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 2) Initial (pre-animated) state */
+.animate-left,
+.animate-right {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* 3) Triggered state */
+.animate-left.in-view {
+  animation: slideInFromLeft 0.8s ease-out forwards;
+}
+
+.animate-right.in-view {
+  animation: slideInFromRight 0.8s ease-out forwards;
+}

@@ -1,0 +1,397 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+  line-height: 1.6;
+  background: #fff;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0.5em;
+}
+a {
+  color: var(--primary-color)
+;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+ul {
+  list-style: none;
+}
+
+/* Top bar */
+.top-bar {
+  background: #333;
+  color: #f0f0f0;
+  font-size: 0.9em;
+}
+.top-bar-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  padding: 5px 15px;
+}
+.top-bar .contact-info span {
+  margin-right: 20px;
+}
+.top-bar .contact-info a {
+  color: #f0f0f0;
+}
+.appointment-btn {
+  background: var(--primary-color)
+;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-weight: 600;
+}
+.appointment-btn:hover {
+  background: var(--primary-color)
+;
+}
+.social-links a {
+  color: #f0f0f0;
+  margin-left: 15px;
+  font-size: 0.9em;
+}
+
+/* Header / Nav */
+.main-header {
+  background: #fff;
+  border-bottom: 2px solid #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 15px;
+}
+.logo img {
+  height: 50px;
+}
+.main-nav {
+  position: relative;
+}
+.nav-list {
+  display: flex;
+  gap: 20px;
+}
+.nav-list li {
+  display: inline-block;
+}
+.nav-list a {
+  font-weight: 600;
+  color: #333;
+  padding: 8px 4px;
+}
+.nav-list a.current {
+  color: var(--primary-color)
+;
+}
+.menu-toggle {
+  display: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.mobile-menu {
+  display: none;
+  background: #fff;
+  border-top: 2px solid #eee;
+}
+.mobile-menu ul {
+  padding: 10px 15px;
+}
+.mobile-menu li {
+  margin: 10px 0;
+}
+.mobile-menu li a {
+  color: #333;
+}
+.testimonials-content {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 15px;
+}
+.testimonials-content h1 {
+  font-size: 2em;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+.testimonials-content > p {
+  text-align: center;
+  margin-bottom: 2em;
+}
+.testimonial {
+  background: #f9f9f9;
+  border-left: 4px solid var(--primary-color)
+;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+.testimonial .quote {
+  font-style: italic;
+  font-size: 1.05em;
+  margin-bottom: 10px;
+  line-height: 1.6;
+}
+.testimonial .author {
+  text-align: right;
+  font-weight: 600;
+  color: #666;
+}
+.cta-text {
+  text-align: center;
+  margin-top: 2em;
+  font-style: italic;
+}
+.cta-section {
+  background: #333;
+  color: #fff;
+  text-align: center;
+  padding: 40px 20px;
+}
+.cta-section h2 {
+  font-size: 1.6em;
+  margin-bottom: 0.2em;
+  font-weight: 700;
+}
+.cta-section p {
+  font-size: 1.1em;
+  margin-bottom: 1em;
+}
+.cta-section .chat-btn {
+  display: inline-block;
+  background: var(--primary-color)
+;
+  color: #fff;
+  padding: 10px 16px;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-weight: 700;
+}
+.cta-section .chat-btn:hover {
+  background: var(--primary-color)
+;
+}
+.newsletter p {
+  margin-bottom: 10px;
+  font-size: 0.95em;
+}
+.subscribe-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+.subscribe-form input {
+  padding: 8px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 3px 0 0 3px;
+}
+.subscribe-form button {
+  padding: 8px 12px;
+  font-size: 0.95em;
+  border: none;
+  border-radius: 0 3px 3px 0;
+  background: var(--primary-color)
+;
+  color: #fff;
+  cursor: pointer;
+}
+.subscribe-form button:hover {
+  background: var(--primary-color)
+;
+}
+.cta-contact {
+  font-size: 0.95em;
+}
+.cta-phone {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.cta-phone .hours {
+  display: inline-block;
+  margin-left: 5px;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: #ddd;
+}
+.cta-social a {
+  color: #fff;
+  margin: 0 8px;
+  font-size: 1.1em;
+}
+.site-footer {
+  background: #222;
+  color: #ccc;
+  padding: 30px 20px;
+}
+.footer-columns {
+  max-width: 1100px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+.footer-col p {
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.footer-col ul li {
+  margin-bottom: 0.4em;
+}
+.footer-col ul li a {
+  color: #ccc;
+  font-size: 0.95em;
+}
+.footer-col ul li a:hover {
+  color: #fff;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 0.85em;
+  color: #777;
+}
+@media(max-width: 1100px) {
+  .top-bar-content {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 5px;
+  }
+  .main-header {
+    flex-wrap: wrap;
+  }
+  .nav-list {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+    padding: 8px;
+    background: #eee;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
+/* —— Nav reset & font unify —— */
+
+/* Remove bullets and reset spacing on both desktop & mobile nav lists */
+header.main-header .main-nav .nav-list,
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Make desktop nav items display inline and space them out */
+header.main-header .main-nav .nav-list li {
+  display: inline-block;
+  margin-right: 20px; /* adjust as needed */
+}
+
+/* Unify link styles in both navs */
+header.main-header .main-nav .nav-list a,
+.mobile-menu a {
+  font-family: 'Open Sans', sans-serif;  /* same as body */
+  font-size: 1rem;                       /* match your desktop size */
+  font-weight: 600;                      /* same weight as desktop */
+  color: #333;                           /* your standard link color */
+  text-decoration: none;
+}
+
+/* Hover/focus states */
+header.main-header .main-nav .nav-list a:hover,
+.mobile-menu a:hover,
+.mobile-menu a.current {
+  color: var(--primary-color)
+; /* or whatever your hover color is */
+}
+/*—— Highlight “current” nav item on desktop ——*/
+header.main-header .main-nav .nav-list a.current {
+  color: var(--primary-color)
+;                /* your accent color */
+  border-bottom: 2px solid var(--primary-color)
+;
+  padding-bottom: 4px;           /* make room for the underline */
+}
+
+/*—— Highlight “current” nav item in mobile dropdown ——*/
+.mobile-menu a.current {
+  color:var(--primary-color)
+;                /* same accent color */
+  background: #f9f9f9;           /* light grey highlight */
+}
+
+
+/* 1) Allow wrapping & add a tiny vertical gap */
+.top-bar-content {
+  display: flex;        /* you already have this */
+  flex-wrap: wrap;      /* allow items to break onto new rows */
+  row-gap: 0.4rem;      /* small gap between each “row” */
+}
+
+/* 2) Stack your email & phone inside .contact-info */
+.top-bar .contact-info span {
+  display: block;       /* each span on its own line */
+}
+
+/* 3) Force the appointment button onto its own row */
+.top-bar .appointment-btn {
+  flex: 1 1 100%;       /* full-width item in the flex container */
+  text-align: center;   /* optional: center its text */
+  margin: 0.4rem 0;     /* vertical breathing room */
+}
+
+/* 4) Let social links share the first row if there’s room */
+.top-bar .social-links {
+  flex: 1 1 auto;       /* default behavior, will sit beside .contact-info */
+  text-align: right;    /* keep them aligned right */
+}
+
+
+/*Facebook central location*/
+/* Center the icon container */
+.social-links {
+  text-align: center;            /* center inline-block children */
+}
+
+/* Make the SVG itself a block and auto-margin it */
+.social-link svg {
+  display: block;
+  margin: 0 auto;                /* horizontally center the SVG */
+}
+
+
+.contact-link {
+  color: var(--primary-color);
+  transition: color 0.3s;
+}
+
+.contact-link:hover {
+  color: #E74C3C;
+}
+

@@ -1,0 +1,173 @@
+/* Note below the positions list */
+.apply-note {
+  font-size: 0.95em;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Highlight current page in nav (overrides in case not covered by home.css) */
+header.main-header .nav-list a.current {
+  color:var(--primary-color)
+;
+  border-bottom: 2px solidvar(--primary-color)
+;
+  padding-bottom: 4px;
+}
+
+
+
+/*Facebook central location*/
+/* Stack links, remove any extra indents */
+.contact-col .social-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: flex-start;   /* keep them at the top of the column */
+  align-items: flex-start;       /* hug the left edge properly */
+  margin: 0;
+  padding: 0;
+  /* optional: match the same inset as your contact-info */
+  transform: translateX(-15px)
+}
+
+
+/* Simple text links, no bubble or border */
+.social-letter {
+  display: block;
+  width: auto;              
+  background: none;         
+  border: none;             
+  padding: -20;               
+  margin: 0;                
+  color: #000;             
+  text-decoration: none;    
+  transition: none;         /* no hover transitions */
+}
+
+/* No color change or lift on hover */
+.social-letter:hover {
+  color: #000;              
+  transform: none;          
+}
+
+
+/* Footer base */
+.site-footer {
+  background: #222;
+  color: #ccc;
+  padding: 30px 20px;
+}
+
+
+/* Layout for footer columns */
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0px;       /* same gutter between cols */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+/* Align each column */
+.footer-columns .footer-col:nth-child(1) {
+  text-align: left;
+}
+.footer-columns .footer-col:nth-child(2) {
+  text-align: center;
+}
+.footer-columns .footer-col:nth-child(3) {
+  text-align: left;
+}
+
+/* Basic column styling */
+.footer-col {
+  flex: 1;
+  min-width: 200px;
+}
+.footer-col h3 {
+  color: #fff;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+.footer-col p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+.footer-col ul {
+  padding: 0;
+}
+.footer-col ul li {
+  margin-bottom: 0.4em;
+}
+.footer-col ul li a {
+  color: #ccc;
+  font-size: 0.95em;
+}
+.footer-col ul li a:hover {
+  color: #fff;
+}
+
+/* Bottom line of the footer */
+.footer-bottom {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 0.85em;
+  color: #777;
+}
+
+/* New Contact-Us column */
+.site-footer .contact-col {
+  /* inherits .footer-col */
+}
+.site-footer .contact-col h3 {
+  color: #fff;
+  margin-bottom: 0.5em;
+  font-size: 1.1em;
+}
+.site-footer .contact-col p {
+  font-size: 0.95em;
+  line-height: 1.5;
+  margin-bottom: 0.5em;
+}
+.site-footer .contact-col .social-links {
+  margin-top: 0.5em;
+}
+.site-footer .contact-col .social-links a {
+  color: #ccc;
+  margin-right: 0px;
+  font-size: 1.1em;
+}
+.site-footer .contact-col .social-links a:hover {
+  color: #fff;
+}
+.site-footer .contact-col .social-links a[aria-label="TikTok"] i {
+  /* TikTok “#69C9D0” brand color on hover */
+  transition: color 0.2s;
+}
+.site-footer .contact-col .social-links a[aria-label="TikTok"]:hover i {
+  color: var(--primary-color);
+}
+
+
+/* collapse footer columns on small screens */
+@media (max-width: 768px) {
+  .footer-columns {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    padding: 0 15px;
+    gap: 1.5rem;
+  }
+
+  /* force left alignment on all footer columns */
+  .footer-columns .footer-col {
+    min-width: auto;
+    text-align: left !important;
+  }
+
+  /* if you’ve center-aligned anything deeper (like lists), override here */
+  .footer-columns .footer-col ul,
+  .footer-columns .footer-col p,
+  .footer-columns .footer-col h3 {
+    text-align: left;
+  }
+}

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Testimonials – Barns Unlimited</title>
+  <link rel="stylesheet" href="testimonials.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="image-styles.css" />
+  <!-- Scroll Animation Styles -->
+  <link rel="stylesheet" href="animations.css" />
+</head>
+<body>
+  <!-- Header -->
+  <div class="top-bar stack-item">
+    <div class="top-bar-content stack-item">
+      <div class="contact-info stack-item">
+        <span>Email: <a href="mailto:sales@barnsunlimited.com">sales@barnsunlimited.com</a></span>
+        <span>Call us: <a href="tel:+14196572510">+419-657-2510</a></span>
+      </div>
+      <a href="#" class="appointment-btn stack-item">Book appointment</a>
+      <div class="social-links stack-item">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+      </div>
+    </div>
+  </div>
+  <header class="main-header stack-item">
+    <div class="logo stack-item">
+      <a href="home.html">
+        <img src="images/BUlogo-1.png" alt="Barns Unlimited logo" width="100" height="80" />
+      </a>
+    </div>
+    <nav class="main-nav stack-item">
+      <ul class="nav-list stack-item">
+        <li><a href="home.html" class="stack-item">Home</a></li>
+        <li><a href="about.html" class="stack-item">About</a></li>
+        <li><a href="services.html" class="stack-item">Services</a></li>
+        <li><a href="metal-sales.html" class="stack-item">Metal Sales</a></li>
+        <li><a href="gallery.html" class="stack-item">Gallery</a></li>
+        <li><a href="testimonials.html" class="current stack-item">Testimonials</a></li>
+        <li><a href="careers.html" class="stack-item">Careers</a></li>
+        <li><a href="contact.html" class="stack-item">Contact</a></li>
+      </ul>
+      <!-- Hamburger / Menu Toggle -->
+      <button class="menu-toggle stack-item" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+    </nav>
+  </header>
+  <nav class="mobile-menu stack-item">
+    <ul>
+      <li><a href="home.html" class="stack-item">Home</a></li>
+      <li><a href="about.html" class="stack-item">About</a></li>
+      <li><a href="services.html" class="stack-item">Services</a></li>
+      <li><a href="metal-sales.html" class="stack-item">Metal Sales</a></li>
+      <li><a href="gallery.html" class="stack-item">Gallery</a></li>
+      <li><a href="testimonials.html" class="current stack-item">Testimonials</a></li>
+      <li><a href="careers.html" class="stack-item">Careers</a></li>
+      <li><a href="contact.html" class="stack-item">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main class="testimonials-content stack-item">
+    <h1 class="stack-item">Customer Testimonials</h1>
+    <p class="stack-item">We value our customers and appreciate their kind words. Here are a few testimonials from clients who trusted Barns Unlimited for their projects:</p>
+    <div class="testimonial stack-item">
+      <p class="quote stack-item">“From the first consultation to the final construction, this company made our dream project come to life. We built a custom commercial structure, and the whole team was professional, dedicated, and thorough. The fact that everything is done in-house makes them a one-stop shop for all your construction needs!”</p>
+      <p class="author stack-item">– Michael T, Construction Manager</p>
+    </div>
+    <div class="testimonial stack-item">
+      <p class="quote stack-item">“I had a great experience working with this team! They designed and built a cusstom pole barn for me, and the quality of the metal products is top-notch. From start to finish, everything was handled in-house, making the entire process smooth and hassle-free. Highly recommend!”</p>
+      <p class="author stack-item">– John M., Farm Owner</p>
+    </div>
+    <div class="testimonial stack-item">
+      <p class="quote stack-item">“I couldn't be happier with the barndominium they built for me! The design process was easy, and the team made sure every detail was perfect. They turned my dream home into a reality. Their in-house work is exceptional, and they truly  care about the finished product.”</p>
+      <p class="author stack-item">– Sarah L., Homeowner</p>
+    </div>
+    <p class="cta-text stack-item">(*Interested in sharing your experience? <a href="contact.html" class="contact-link">contact us</a>  – we'd love to hear your feedback!*)</p>
+  </main>
+
+  <div data-include="footer.html" class="stack-item"></div>
+  <script>
+    document.querySelectorAll('[data-include]').forEach(el => {
+      fetch(el.getAttribute('data-include'))
+        .then(res => res.text())
+        .then(html => { el.outerHTML = html; })
+        .catch(err => console.error('Include failed:', err));
+    });
+  </script>
+
+  <!-- Scroll Animation Script -->
+  <script src="animations.js"></script>
+
+  <!-- Testimonials Script -->
+  <script src="testimonials.js"></script>
+</body>
+</html>
