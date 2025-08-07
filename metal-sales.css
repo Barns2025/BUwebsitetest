@@ -497,3 +497,13 @@ header.main-header .main-nav .nav-list a.current {
     grid-template-columns: 1fr;
   }
 }
+/* at the very bottom of your global CSS (or in metal-sales.css) */
+html, body {
+  overflow-x: hidden;
+}
+
+/* and make sure images can never exceed their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
