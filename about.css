@@ -563,4 +563,9 @@ body.about-page .gallery-item img:hover {
   margin: 1.5em 0 0.5em;                  /* same top/bottom spacing */  
   text-align: left;                     /* centered like your other headings */  
 }
+/* Make phone & email links in the footer white */
+.site-footer a[href^="tel"],
+.site-footer a[href^="mailto"] {
+  color: #fff !important;
+}
 
