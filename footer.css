@@ -182,3 +182,31 @@ header.main-header .nav-list a.current {
 .site-footer a[href^="mailto"] {
   color: #fff !important;
 }
+
+
+/* === Force CTA into two rows with zero gap on mobile & desktop === */
+.cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0 !important;            /* eliminate any breathing room */
+}
+
+/* Remove the default 20px bottom margin on the chat-btn */
+.cta-content .chat-btn {
+  margin-bottom: 0 !important;
+}
+
+/* Make the newsletter/contact block sit flush beneath the button */
+.cta-content .newsletter {
+  margin-top: 0 !important;
+}
+
+/* === On narrow screens, ensure each element spans full width === */
+@media (max-width: 768px) {
+  .cta-content .chat-btn,
+  .cta-content .newsletter {
+    width: 100%;                /* full-width rows */
+  }
+}
+
