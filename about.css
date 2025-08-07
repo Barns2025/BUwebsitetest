@@ -509,3 +509,58 @@ header.main-header .main-nav .nav-list a.current {
   }
 
 }
+
+
+/* Match other section headings */
+.gallery-section h2 {
+  font-family: 'Montserrat', sans-serif;      /* same global heading font */  
+  font-size: 1.5em;                            /* same as .service-section h2 */  
+  font-weight: 700;                            /* bold for emphasis */  
+  color: var(--primary-color);                 /* accent color */  
+  margin: 1.5em 0 0.5em;                       /* top/bottom spacing like About titles */  
+}
+/* Scope only to About page (add class="about-page" on <body>) */
+body.about-page .gallery-section {
+  /* match gallery-content container width & centering */
+  max-width: 800px !important;
+  margin: 40px auto !important;
+  padding: 0 15px !important;
+}
+
+/* Force the section title into primary color, same font & sizing */
+body.about-page .gallery-section h2 {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 1.5em !important;
+  font-weight: 700 !important;
+  color: var(--primary-color) !important;
+  text-align: left !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Reuse main gallery grid & image styles */
+body.about-page .gallery-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)) !important;
+  gap: 20px !important;
+  margin-bottom: 2em !important;
+}
+body.about-page .gallery-item img {
+  width: 100% !important;
+  height: auto !important;
+  border-radius: 5px !important;
+  transition: transform 0.2s !important;
+}
+body.about-page .gallery-item img:hover {
+  transform: scale(1.05) !important;
+}
+
+/* Match “About Barns Unlimited” title to the style of “Our Mission & Values” */
+.about-content h1 {
+  font-family: 'Montserrat', sans-serif;  /* same font as your section titles */  
+  font-size: 1.5em;                       /* same size as .about-content h2 */  
+  font-weight: 700;                       /* bold for emphasis */  
+  color: var(--primary-color);            /* primary accent color */  
+  margin: 1.5em 0 0.5em;                  /* same top/bottom spacing */  
+  text-align: left;                     /* centered like your other headings */  
+}
+
