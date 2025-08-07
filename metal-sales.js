@@ -31,3 +31,14 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// 4) Scroll-triggered animations using IntersectionObserver
+const observerOptions = { threshold: 0.8 };
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // Add the fade-in-up animation class when section comes into view
+      entry.target.classList.add("fade-in-up");
+      observer.unobserve(entry.target); // animate only once
+    }
+  });
+}, observerOptions);
