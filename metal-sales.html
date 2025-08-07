@@ -3,7 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Metal Sales – Barns Unlimited</title>
+
+  <title>Metal Roofing &amp; Siding Sales | Barns Unlimited</title>
+  <meta name="description" content="Barns Unlimited offers metal roofing and siding sales, providing contractors and DIY customers with durable panels, trim, and accessories for barns and more." />
+  <meta name="keywords" content="Barns Unlimited, metal sales, metal roofing, metal siding, roofing panels, siding panels, metal barn materials, Lima Ohio, barn roofing, barn siding" />
+  <link rel="canonical" href="https://barnsunlimited.com/metal-sales" />  <!-- Replace with actual metal-sales page URL -->
+  <meta property="og:title" content="Metal Roofing &amp; Siding Sales | Barns Unlimited" />
+  <meta property="og:description" content="Barns Unlimited offers metal roofing and siding sales, providing contractors and DIY customers with durable panels, trim, and accessories for barns and more." />
+  <meta property="og:url" content="https://barnsunlimited.com/metal-sales" />
+  <meta property="og:image" content="https://barnsunlimited.com/images/BUlogo-1.png" />
+  <meta property="og:site_name" content="Barns Unlimited" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@BarnsUnlimited" />
+  <meta name="twitter:title" content="Metal Roofing &amp; Siding Sales | Barns Unlimited" />
+  <meta name="twitter:description" content="Barns Unlimited offers metal roofing and siding sales, providing contractors and DIY customers with durable panels, trim, and accessories for barns and more." />
+  <meta name="twitter:image" content="https://barnsunlimited.com/images/BUlogo-1.png" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Barns Unlimited",
+    "url": "https://barnsunlimited.com/",
+    "logo": "https://barnsunlimited.com/images/BUlogo-1.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "5350 S Wapakoneta Rd",
+      "addressLocality": "Lima",
+      "addressRegion": "OH",
+      "postalCode": "45806",
+      "addressCountry": "US"
+    },
+    "telephone": "+1-419-657-2510",
+    "sameAs": [
+      "https://www.facebook.com/BarnsUnlimitedltd",
+      "https://twitter.com/BarnsUnlimited"
+    ]
+  }
+  </script>
+
   <link rel="stylesheet" href="metal-sales.css" />
   <link rel="stylesheet" href="home.css" />
   <link rel="stylesheet" href="image-styles.css" />
@@ -73,7 +111,7 @@
 
     <section class="metal-products stack-item">
       <h2 class="stack-item">Our Metal Products</h2>
-      <p class="stack-item">We offer 29-gauge and 26-gauge steel panels in a variety of profiles (ribbed panels, standing seam, etc.) to suit your project. All our metal panels feature a <strong>40-year paint</strong> warranty and are engineered to withstand harsh weather. Choose from <strong>28 standard colors</strong> and even special <strong>crinkle finish</strong> colors for a textured matte look. Matching trim, screws, and accessories are available for a complete installation.</p>
+      <p class="stack-item">We offer 28-gauge and 26-gauge steel panels in a variety of profiles (ribbed panels, standing seam, etc.) to suit your project. All our metal panels feature a <strong>40-year paint</strong> warranty and are engineered to withstand harsh weather. Choose from <strong>27 standard colors</strong> and even special <strong>crinkle finish</strong> colors for a textured matte look. Matching trim, screws, and accessories are available for a complete installation.</p>
       <ul class="metal-features stack-item">
         <li>Roofing Panels (cut to custom lengths)</li>
         <li>Siding Panels</li>
@@ -92,7 +130,6 @@
         <div class="color-swatch"><span style="background: #8B4513;"></span> Brown</div>
         <div class="color-swatch"><span style="background: #708090;"></span> Charcoal Gray</div>
         <div class="color-swatch"><span style="background: #005A9C;"></span> Navy Blue</div>
-        <div class="color-swatch"><span style="background: #228B22;"></span> Forest Green</div>
         <div class="color-swatch"><span style="background: #D8D8D8;"></span> Galvalume</div>
         <div class="color-swatch"><span style="background: #F8F4E3;"></span> Alamo White</div>
         <div class="color-swatch"><span style="background: #5E6D70;"></span> Burnished Slate</div>
@@ -153,7 +190,7 @@
 
 
       </div>
-      <p class="stack-item">We keep all <strong>26 colors and 2 crinkle-finish colors</strong> in stock. Custom colors may be available by special order. Stop by our office to see physical color samples and discuss which finish is right for you.</p>
+      <p class="stack-item">We keep all <strong>25 colors and 2 crinkle-finish colors</strong> in stock. Custom colors may be available by special order. Stop by our office to see physical color samples and discuss which finish is right for you.</p>
     </section>
 
     <section class="metal-advantages stack-item">
@@ -180,6 +217,23 @@
   </main>
 
   <!-- …your page’s content above… -->
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // 1) Create the observer (same settings you use on other pages)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        entry.target.classList.toggle("in-view", entry.isIntersecting);
+      });
+    }, { threshold: 0.2 });
+
+    // 2) Hook it up to every .animate-on-scroll element
+    document.querySelectorAll(".animate-on-scroll")
+            .forEach(el => observer.observe(el));
+
+    // 3) Force an initial check so items already in view reveal immediately
+    window.dispatchEvent(new Event("scroll"));
+  });
+  </script>
 
   <!-- inject footer.html here -->
   <div data-include="footer.html" class="stack-item"></div>
@@ -199,23 +253,5 @@
 
   <!-- Site Script -->
   <script src="metal-sales.js"></script>
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  // 1) Create the observer (same settings you use on other pages)
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      entry.target.classList.toggle("in-view", entry.isIntersecting);
-    });
-  }, { threshold: 0.2 });
-
-  // 2) Hook it up to every .animate-on-scroll element
-  document.querySelectorAll(".animate-on-scroll")
-          .forEach(el => observer.observe(el));
-
-  // 3) Force an initial check so items already in view reveal immediately
-  window.dispatchEvent(new Event("scroll"));
-});
-</script>
-
 </body>
 </html>
