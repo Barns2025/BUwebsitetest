@@ -497,13 +497,12 @@ header.main-header .main-nav .nav-list a.current {
     grid-template-columns: 1fr;
   }
 }
-/* at the very bottom of your global CSS (or in metal-sales.css) */
+/* force hide any horizontal overflow on every page */
 html, body {
-  overflow-x: hidden;
+  overflow-x: hidden !important;
 }
 
-/* and make sure images can never exceed their container */
-img {
-  max-width: 100%;
-  height: auto;
+/* make sure no element can escape its container */
+* {
+  box-sizing: border-box;
 }
